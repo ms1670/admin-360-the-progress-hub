@@ -1,0 +1,187 @@
+/* src/modules/departmentRoute/submenuLayout.css */
+.submenu-layout {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submenu-layout h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .submenu-layout h3 {
+    font-size: 20px;
+    color: #444;
+    margin-top: 20px;
+  }
+  
+  .submenu-layout .employee-list {
+    margin-top: 20px;
+  }
+  
+  .submenu-layout .employee-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .submenu-layout .employee-list ul li {
+    font-size: 16px;
+    color: #555;
+    padding: 5px 0;
+  }
+  
+  .submenu-layout .employee-list ul li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .submenu-layout .other-section {
+    margin-top: 30px;
+  }
+  
+  .submenu-layout .other-section p {
+    font-size: 16px;
+    color: #777;
+  }
+
+  /* Submenu Layout Styles */
+.sml-employee-table-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+  
+  .sml-table-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sml-employee-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .sml-table-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .sml-table-row:nth-child(even) {
+    background: #f1f1f1;
+  }
+  
+  .sml-table-data {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .sml-no-employees {
+    font-style: italic;
+    color: #888;
+    padding: 10px;
+  }
+  
+
+  /* ✅ Table Container */
+.sml-employee-table-container {
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ✅ Table Styling */
+  .sml-employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .sml-table-header {
+    background: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .sml-table-row:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  .sml-table-row:hover {
+    background: #eef6ff;
+  }
+  
+  .sml-table-data {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* ✅ Name Column with Avatar */
+  .sml-name-cell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sml-employee-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sml-employee-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+  }
+  
+  /* ✅ Email Column Styling */
+  .sml-email-cell {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* ✅ Actions Column */
+  .sml-actions-cell {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .sml-action-btn {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .sml-edit-btn {
+    background: #ffc107;
+    color: #fff;
+  }
+  
+  .sml-delete-btn {
+    background: #dc3545;
+    color: #fff;
+  }
+  
+  .sml-edit-btn:hover {
+    background: #e0a800;
+  }
+  
+  .sml-delete-btn:hover {
+    background: #c82333;
+  }
+  
+  

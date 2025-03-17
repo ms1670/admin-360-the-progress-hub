@@ -1,0 +1,74 @@
+/* ✅ Filters & Actions Container */
+.filters-actions {
+  display: flex;
+  justify-content: flex-end; /* ✅ Aligns everything to the right */
+  align-items: center;
+  padding: 12px 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+/* ✅ Filters Section */
+.filters {
+  position: relative;
+}
+
+.filter-btn {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 5px;
+  width: 160px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 700;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+/* ✅ Actions Section */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* ✅ Keeps spacing consistent */
+}
+
+/* ✅ Actions Buttons */
+.action-btn {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background: #eee;
+}

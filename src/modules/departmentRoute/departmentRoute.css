@@ -1,0 +1,49 @@
+.department-route {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.department-route h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.department-route p {
+  font-size: 16px;
+  color: #666;
+}
+
+
+/* departmentRoute.css */
+.department-route {
+  padding: 20px;
+}
+
+.department-route h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.department-route p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.department-route h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.department-route ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.department-route li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}

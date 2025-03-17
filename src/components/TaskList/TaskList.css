@@ -1,0 +1,334 @@
+/* ✅ New Tasks Card */
+.new-tasks-card {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  /* margin-top: 10px; */
+  max-width: 100%;
+}
+
+/* ✅ New Tasks Header */
+.new-tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+
+/* TaskList.css */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list {
+  max-height: 300px;   /* Set the maximum height to 350px */
+  overflow-y: auto;    /* Enable vertical scrolling if the content exceeds the height */
+  padding-right: 10px; /* Optional: Add some padding to avoid content being stuck to the right */
+}
+
+/* ✅ Submenu Scrollbar - New Color */
+.task-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #005500; /* 🔹 New Distinct Color */
+  border-radius: 4px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: #FDE9B6;
+}
+
+
+.new-tasks-card {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  /* margin-top: 10px; */
+  flex: 1; /* Ensure it takes available space */
+}
+
+.task-list-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  align-items: center;
+}
+
+/* Your other styles for task items, buttons, etc. */
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ✅ New Tasks Header Icon */
+.task-icon {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+/* ✅ New Task Button */
+.new-task-btn {
+  background-color: #005500;
+  color: #fde9b6;
+  border: none;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.new-task-btn:hover {
+  background-color: #005500;
+}
+
+/* ✅ Task List Header */
+.task-list-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  align-items: center;
+}
+
+.task-header-title { flex: 2; }
+.task-header-member { flex: 1.8; }
+.task-header-attachment { flex: 0.5; text-align: center; }
+.task-header-date { flex: 1; }
+.task-header-status { flex: 1; text-align: right; }
+
+/* ✅ Task List */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.task-title { flex: 2; }
+.task-member-department { flex: 1.8; }
+.task-attachment { flex: 0.5; text-align: center; }
+.task-date { 
+  flex: 1 1;
+  font-size: 14px;
+  color: #1f1f1f;
+}
+
+.task-status-new-card {
+  flex: 1;
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+}
+/* ✅ Member & Department Column */
+.task-member-department {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%; /* Ensures full height for spacing */
+  align-items: flex-start; /* Align items to the start */
+}
+
+/* ✅ Member Name */
+.task-member {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px; /* Adds space below the member name */
+}
+
+/* ✅ Department Name */
+.task-department {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ✅ View More Tasks Button Container */
+.view-more-button-container {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* ✅ View More Tasks Button */
+.view-more-btn {
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-more-btn:hover {
+  color: #0056b3;
+}
+
+/* ✅ Attachment Icon */
+.attachment-icon {
+  font-size: 16px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.attachment-icon.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ✅ Task Title & Attachments */
+.task-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ✅ Attachment Styling */
+.task-attachments {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.task-attachments a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  padding: 6px 0px;
+}
+
+.task-attachments a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Different Attachment Icons */
+.attachment-icon.pdf {
+  color: red;
+}
+
+.attachment-icon.image {
+  color: green;
+}
+
+.attachment-icon.other {
+  color: #555;
+}
+
+/* ✅ Attachment Text */
+.attachment-text {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.task-list-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 0.5fr;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  align-items: center;
+}
+
+.task-header-actions {
+  flex: 0.5;
+  text-align: center;
+}
+
+.task-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 0.5fr;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+/* ✅ Edit and More Options */
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.task-edit-icon {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.task-edit-icon:hover {
+  color: #0056b3;
+}
+
+.more-options {
+  position: relative;
+  display: inline-block;
+}
+
+.more-options-icon {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.more-options-icon:hover {
+  color: #555;
+}
+
+/* ✅ Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-menu button:hover {
+  background: #f4f4f4;
+}
+

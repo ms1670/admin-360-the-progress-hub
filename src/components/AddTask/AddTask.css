@@ -1,0 +1,91 @@
+/* AddTask Component Styles */
+.add-task-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+  }
+  
+  .add-task-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add a higher z-index for the modal */
+  .popup-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;  /* Highest z-index */
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+  }
+  
+  /* Ensure the sidebar has a lower z-index (optional adjustment) */
+  .sidebar {
+    z-index: 1000; /* Make sure sidebar has a lower z-index than modal */
+  }
+  
+  .add-task-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .add-task-container label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .add-task-container input,
+  .add-task-container select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-task-container select {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-group button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .button-group button[type="button"] {
+    background-color: #ccc;
+  }
+  
+  .button-group button:hover {
+    opacity: 0.9;
+  }
+  

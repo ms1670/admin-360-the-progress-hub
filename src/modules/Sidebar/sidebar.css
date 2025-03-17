@@ -1,0 +1,337 @@
+/* ✅ Sidebar Container */
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    /* background-color: #fde9b6; */
+      /*9acdff; */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* ✅ Sidebar Closed (Collapsed) */
+.sidebar.closed {
+    width: 60px;
+}
+
+/* ✅ Sidebar Body */
+.sidebar-body {
+    flex-grow: 1;
+    margin-top: 100px; /* ✅ Fixed: Ensures top margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* ✅ Sidebar Header (Sticky at Bottom) */
+.sidebar-header {
+    height: 50px;
+    background: #005500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+/* ✅ Sidebar Toggle Button */
+.toggle-btn {
+    background: #005500;
+    /* rgb(31 44 56); */
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* ✅ Top & Bottom Menu - Same Styling */
+.top-menu,
+.bottom-menu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    background: #FDE9B6;
+}
+
+/* ✅ Menu Items (Shared by Both Menus) */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s, border-radius 0.3s;
+    white-space: nowrap;
+    border-radius: 12px;
+    color: black;
+}
+
+/* ✅ Sidebar Expanded - Align Left */
+.menu-item.expanded {
+    justify-content: flex-start;
+}
+
+/* ✅ Sidebar Collapsed - Center Icons */
+.sidebar.closed .menu-item {
+    justify-content: center;
+}
+
+/* ✅ Hide Menu Text When Collapsed */
+.menu-text {
+    transition: opacity 0.3s ease-in-out, width 0.3s;
+    display: inline-block;
+    color: black;
+    /* font-size: 15px; */
+    font-size: 16px;
+}
+
+.sidebar.closed .menu-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ✅ Active Menu */
+.menu-item.active {
+    background: #ffc022 !important;
+    /* B0886F */
+    border-radius: 12px;
+    color: black;
+}
+
+/* ✅ Hover Effect */
+.menu-item:hover {
+    background: #efba46;
+    border-radius: 12px;
+    transition: background 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+/* ✅ Icon Styles */
+.icon-sidebar {
+    /* font-size: 16px; */
+    font-size: 18px;
+    color:#005500;
+}
+
+.icon {
+    font-size: 16px;
+    color:black;
+}
+
+/* ✅ Submenu Styling */
+.sub-menu {
+    list-style: none;
+    padding-left: 20px;
+    overflow-y: auto;
+    max-width: 160px;
+}
+
+.submenu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: black;
+    transition: color 0.2s ease-in-out;
+    border-radius: 8px;
+}
+
+.submenu-item:hover,
+.submenu-item.active {
+    background: #efba46;
+    color: black;
+}
+
+/* ✅ Submenu Icons (Dropdown) */
+.submenu-icon {
+    margin-left: 8px;
+    font-size: 22px;
+}
+
+/* ✅ Sticky Top & Bottom Menus */
+.top-menu,
+.bottom-menu {
+    position: sticky;
+    top: 0;
+    /* bottom: 60px; */
+    z-index: 20;
+}
+
+/* ✅ Scrollable Sidebar Body */
+.sidebar-body {
+    overflow-y: auto;
+}
+/* ✅ Submenu Styling */
+.sub-menu {
+    list-style: none;
+    padding-left: 20px;
+    overflow-y: auto;
+    max-width: 160px;
+    max-height: 150px; /* Prevents submenu from growing too long */
+}
+
+/* ✅ Submenu Items */
+.submenu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: black;
+    transition: background 0.2s ease-in-out;
+    border-radius: 8px;
+}
+
+/* ✅ Submenu Hover and Active State */
+.submenu-item:hover,
+.submenu-item.active {
+    background: #efba46;
+    color: black;
+}
+
+/* ✅ Submenu Scrollbar - New Color */
+.sub-menu::-webkit-scrollbar {
+    width: 3px;
+}
+
+.sub-menu::-webkit-scrollbar-thumb {
+    background-color: #7a5c3a; /* 🔹 New Distinct Color */
+    border-radius: 4px;
+}
+
+.sub-menu::-webkit-scrollbar-track {
+    background: #FDE9B6;
+}
+
+
+/* ✅ Sidebar Container */
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    /* background-color: #fde9b6; */
+    /* background-color: #9acdff; */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* ✅ Sidebar Collapsed */
+.sidebar.closed {
+    width: 60px;
+}
+
+/* ✅ Sidebar Body */
+.sidebar-body {
+    flex-grow: 1;  /* Takes available space */
+    margin-top: 90px;  /* Ensures correct spacing */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* border: 1px solid #ff1f1f; */
+    /* border-radius: 16px; */
+    /* box-shadow: 2px 1px 8px 2px rgba(58, 58, 58, 0.15); */
+    background-color: #fde9b6;
+    margin-bottom: 10px;
+    margin-left: 8px;
+}
+
+/* ✅ Top Menu */
+.top-menu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    background: #FDE9B6;
+    margin-top: 10px;
+}
+
+/* ✅ Bottom Menu (Now at the End of Sidebar Body) */
+.bottom-menu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    background: #FDE9B6;
+    margin-top: auto;  /* ✅ This pushes it to the end of the sidebar body */
+    margin-bottom: 10px;
+}
+
+
+/* ✅ Sidebar Toggle Button */
+.toggle-btn {
+    background: #005500;
+    /* rgb(31 44 56); */
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ✅ Menu Items */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s, border-radius 0.3s;
+    white-space: nowrap;
+    border-radius: 12px;
+    color: black;
+}
+
+/* ✅ Active & Hover Effects */
+.menu-item.active {
+    background: #efba46!important;
+}
+
+.menu-item:hover {
+    background: #e4bfa7;
+    border-radius: 12px;
+}
+
+/* ✅ Sidebar Collapsed - Center Items */
+.sidebar.closed .menu-item {
+    justify-content: center;
+}
+
+
+/* ✅ Sidebar Body Scrollbar */
+.sidebar-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar-body::-webkit-scrollbar-thumb {
+    background-color: #7a5c3a; /* 🔹 Match submenu thumb color */
+    border-radius: 10px;
+}
+
+.sidebar-body::-webkit-scrollbar-track {
+    background: #FDE9B6; /* 🔹 Match submenu track color */
+}
+
+/* ✅ Align Toggle Button to Right When Expanded */
+.sidebar:not(.closed) .sidebar-header {
+    justify-content: flex-end; /* Aligns button to right */
+    padding-right: 12px; /* Add some spacing */
+}

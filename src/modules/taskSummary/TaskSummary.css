@@ -1,0 +1,98 @@
+.task-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-radius:8px;
+  }
+  
+  .task-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 5px solid;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .task-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .task-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 12px;
+  }
+  
+  .task-info h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .task-info p {
+    margin: 4px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  /* ✅ Task Card (Fixed) */
+.task-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ✅ Aligns items to the left */
+    text-align: left; /* ✅ Ensures text stays aligned left */
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .task-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* ✅ Task Icon (Now Top-Left) */
+  .task-icon {
+    font-size: 28px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  
+  /* ✅ Task Count (Centered) */
+  .task-count {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px; /* ✅ Adjust spacing to avoid overlap */
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* ✅ Task Status (Centered Below Count) */
+  .task-status {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .task-summary {
+    position: relative; /* Ensure it's within the regular flow */
+    z-index: 300; /* Lower than sidebar and modal */
+}

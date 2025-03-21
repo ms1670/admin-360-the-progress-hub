@@ -8,21 +8,25 @@ import TaskList from "./components/TaskList/TaskList";
 import Calendar from "./modules/calendar/Calendar";  
 import DepartmentDetails from "./modules/departmentdetails/DepartmentDetails";
 import DepartmentRoute from "./modules/departmentRoute/DepartmentRoute";
-import "./App.css";
 import Task from "./modules/task/Task";
+import { initialTasks } from "./data/TaskData";  // ✅ Import initial task data
+import "./App.css";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [tasks, setTasks] = useState(initialTasks);  // ✅ Manage tasks globally
 
   return (
     <Router>
       <div className={`app-container ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
         {/* ✅ Sidebar */}
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+          
 
         {/* ✅ Main Content */}
         <div className={`main-content ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
           <Topbar />
+          
           <div className="content-area">
             <Routes>
               {/* ✅ Dashboard Route (Main Dashboard with Full Task List) */}
@@ -30,11 +34,12 @@ const App = () => {
                 path="/" 
                 element={
                   <>
-                    <FiltersActions />
-                    <TaskSummary />
+                    {/* ✅ Pass tasks & setTasks to FiltersActions so it can add tasks */}
+                    <FiltersActions tasks={tasks} setTasks={setTasks} /> 
+                    <TaskSummary tasks={tasks} />
                     <div className="task-calendar-row">
-                      {/* Full Task List displayed here */}
-                      <TaskList />
+                      {/* ✅ Pass tasks & setTasks to TaskList so it updates */}
+                      <TaskList tasks={tasks} setTasks={setTasks} /> 
                       <Calendar />
                     </div>
                     <DepartmentDetails />
@@ -43,15 +48,12 @@ const App = () => {
               />
 
               {/* ✅ Department Route (Department-specific Tasks filtered) */}
-              <Route 
-                path="/departments/:departmentName" 
-                element={<DepartmentRoute />} 
-              />
+              <Route path="/departments/:departmentName" element={<DepartmentRoute />} />
 
-              {/* ✅ Newly Added Routes */}
-              <Route path="/tasks" element={<Task />} />  {/* Tasks Page */}
-              <Route path="/reports" element={<h2>Reports Page</h2>} />  {/* Reports Page Placeholder */}
-              <Route path="/settings" element={<h2>Settings Page</h2>} />  {/* Settings Page Placeholder */}
+              {/* ✅ Additional Routes */}
+              <Route path="/tasks" element={<Task />} />  
+              <Route path="/reports" element={<h2>Reports Page</h2>} />  
+              <Route path="/settings" element={<h2>Settings Page</h2>} />  
             </Routes>
           </div>
         </div>
@@ -61,6 +63,73 @@ const App = () => {
 };
 
 export default App;
+
+
+// import React, { useState } from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Sidebar from "./modules/Sidebar/Sidebar";
+// import Topbar from "./modules/Topbar/topbar";
+// import FiltersActions from "./modules/FiltersActions";
+// import TaskSummary from "./modules/taskSummary/TaskSummary"; 
+// import TaskList from "./components/TaskList/TaskList"; 
+// import Calendar from "./modules/calendar/Calendar";  
+// import DepartmentDetails from "./modules/departmentdetails/DepartmentDetails";
+// import DepartmentRoute from "./modules/departmentRoute/DepartmentRoute";
+// import "./App.css";
+// import Task from "./modules/task/Task";
+
+// const App = () => {
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+//   return (
+
+//     <Router>
+//       <div className={`app-container ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
+//         {/* ✅ Sidebar */}
+//         <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+
+//         {/* ✅ Main Content */}
+//         <div className={`main-content ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
+//           <Topbar />
+//           <div className="content-area">
+//             <Routes>
+//               {/* ✅ Dashboard Route (Main Dashboard with Full Task List) */}
+//               <Route 
+//                 path="/" 
+//                 element={
+//                   <>
+//                     <FiltersActions />
+//                     <TaskSummary />
+//                     <div className="task-calendar-row">
+//                       {/* Full Task List displayed here */}
+//                       <TaskList />
+//                       <Calendar />
+//                     </div>
+//                     <DepartmentDetails />
+//                   </>
+//                 } 
+//               />
+              
+
+//               {/* ✅ Department Route (Department-specific Tasks filtered) */}
+//               <Route 
+//                 path="/departments/:departmentName" 
+//                 element={<DepartmentRoute />} 
+//               />
+
+//               {/* ✅ Newly Added Routes */}
+//               <Route path="/tasks" element={<Task />} />  {/* Tasks Page */}
+//               <Route path="/reports" element={<h2>Reports Page</h2>} />  {/* Reports Page Placeholder */}
+//               <Route path="/settings" element={<h2>Settings Page</h2>} />  {/* Settings Page Placeholder */}
+//             </Routes>
+//           </div>
+//         </div>
+//       </div>
+//     </Router>
+//   );
+// };
+
+// export default App;
 
 
 // import React, { useState } from "react";

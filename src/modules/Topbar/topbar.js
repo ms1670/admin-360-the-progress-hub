@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import "./topbar.css";
 import { FiSearch, FiBell, FiInbox, FiUser, FiSettings, FiLogOut } from "react-icons/fi";
 import profileImage from "../../assets/profile-demo-img.png"; // Correct Import Path
+import logo from "../../assets/admin-360-logo.jpg"; // Correct Import Path
+
 
 const Topbar = () => {
   const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
@@ -27,9 +29,13 @@ const Topbar = () => {
 
   return (
     <div className="topbar">
-      {/* ✅ Left: Logo & Title */}
+      {/* ✅ Left: Logo & Title
       <div className="topbar-left">
         <img src="/logo192.png" alt="Logo" className="logo" />
+        <h1 className="project-title">Task Manager</h1>
+      </div> */}
+      <div className="topbar-left">
+        <img src={logo} alt="Logo" className="logo" />
         <h1 className="project-title">Task Manager</h1>
       </div>
 
@@ -76,6 +82,8 @@ const Topbar = () => {
 };
 
 export default Topbar;
+
+
 
 // import React from "react";
 // import "./topbar.css";

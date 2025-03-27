@@ -1,0 +1,46 @@
+Project Structure for admin-360-the-progress-hub-mui
+
+
+admin-360-the-progress-hub-mui/
+│── package.json
+│── package-lock.json
+│── src/
+│   │── App.tsx
+│   │── theme/
+│   │   └── Theme.ts
+│   │── assets/
+│   │   └── admin-360-logo.jpg
+│   │── types/
+│   │   └── taskTypes.ts
+│   │── data/
+│   │   ├── TaskData.ts
+│   │   ├── departments.tsx
+│   │   └── departmentEmployeesDetails.tsx
+│   │── modules/
+│   │   │── addTask/
+│   │   │   └── AddTask.tsx
+│   │   │── allDepartments/
+│   │   │   └── AllDepartmentsTaskList.tsx
+│   │   │── calendar/
+│   │   │   ├── Calendar.tsx
+│   │   │   └── EventCalendar.tsx
+│   │   │── login/
+│   │   │   └── Login.tsx
+│   │   │── mainDashboard/
+│   │   │   └── MainDashboard.tsx
+│   │   │── progressCards/
+│   │   │   └── ProgressCards.tsx
+│   │   │── quickActions/
+│   │   │   └── QuickActionPanel.tsx
+│   │   │── sidebar/
+│   │   │   └── Sidebar.tsx
+│   │   │── taskList/
+│   │   │   └── TaskList.tsx
+│   │   │── topbar/
+│   │   │   └── Topbar.tsx
+│   │── pages/
+│   │   ├── Department.tsx
+│   │   ├── Report.tsx
+│   │   ├── Settings.tsx
+│   │   ├── SubDepartments.tsx
+│   │   └── Task.tsx

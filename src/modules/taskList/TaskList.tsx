@@ -19,6 +19,7 @@ interface TaskListProps {
   openAddTask: boolean; // ✅ Added this
   handleOpenAddTask: () => void; // ✅ Added this
   handleCloseAddTask: () => void; // ✅ Added this
+  hideAddTask?: boolean;  // ✅ Optional prop to hide Add Task button
 }
 
 // ✅ Function to get the correct file icon
@@ -30,7 +31,14 @@ const getFileIcon = (fileName: string) => {
   return <InsertDriveFileIcon sx={{ color: "green" }} />;
 };
 
-const TaskList: React.FC<TaskListProps> = ({ tasks, setTasks, handleOpenAddTask }) => {
+const TaskList: React.FC<TaskListProps> = ({ 
+  tasks,
+  setTasks,
+  openAddTask,
+  handleOpenAddTask,
+  handleCloseAddTask,
+  hideAddTask = false,  // ✅ Default to false
+}) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [selectedTask, setSelectedTask] = useState<number | null>(null);
 
@@ -73,9 +81,14 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, setTasks, handleOpenAddTask 
       {/* Title & Add Task Button */}
       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
         <Typography variant="h6">New Tasks</Typography>
-        <Button variant="contained" startIcon={<AddIcon />} onClick={handleOpenAddTask}>
+        {!hideAddTask && (  // ✅ Conditionally render the button
+                <Button variant="contained" onClick={handleOpenAddTask}>
+                    Add Task
+                </Button>
+            )}
+        {/* <Button variant="contained" startIcon={<AddIcon />} onClick={handleOpenAddTask}>
           Add Task
-        </Button>
+        </Button> */}
       </Box>
 
       {/* Task Table */}

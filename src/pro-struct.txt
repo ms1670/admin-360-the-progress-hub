@@ -38,9 +38,32 @@ admin-360-the-progress-hub-mui/
 │   │   │   └── TaskList.tsx
 │   │   │── topbar/
 │   │   │   └── Topbar.tsx
+│   │   │── departmentDashboard/
+│   │   │   ├── DepartmentDashboard.tsx
+│   │   │   └── DepartmentSidebar.tsx
+│   │   │   └── DepartmentMembers.tsx
+│   │   │   └── DepartmentReports.tsx
+│   │   │   └── DepartmentSettings.tsx
+│   │   │── memberDashboard/
+│   │   │   ├── MemberDashboard.tsx
+│   │   │   └── MemberSidebar.tsx
+│   │   │   └── MemberProfile.tsx
+│   │   │   └── MemberTasks.tsx
+│   │   │   └── MemberReports.tsx
+│   │   │   └── MemberSettings.tsx
 │   │── pages/
 │   │   ├── Department.tsx
 │   │   ├── Report.tsx
 │   │   ├── Settings.tsx
 │   │   ├── SubDepartments.tsx
-│   │   └── Task.tsx
+│   │   ├── Task.tsx
+│   │   └── Member.tsx
+│   │── jwt-auth/
+│   │   │── /routes/
+│   │   │   ├── authRoutes.js      # Handles authentication routes (Login, Register, Logout)
+│   │   │── /middlewares/
+│   │   │   ├── authMiddleware.js  # Middleware to verify JWT tokens
+│   │   │── /config/
+│   │   │   ├── db.js              # PostgreSQL database connection
+│   │   │── server.js              # Main Express server file
+│   │   │── .env                   # Environment variables (JWT Secret, DB Connection)

@@ -2,7 +2,6 @@ export const departmentEmployeesDetails = [
     { id: 101, name: "Aravi", email: "aravi@company.com", department: "Agriculture", designation: "Senior Agronomist" },
     { id: 102, name: "Krithika", email: "krithika@company.com", department: "Agriculture", designation: "Farm Consultant" },
 
-
     { id: 103, name: "Murugan", email: "murugan@company.com", department: "Education", designation: "Professor" },
     { id: 104, name: "Malini", email: "malini@company.com", department: "Education", designation: "Academic Coordinator" },
 

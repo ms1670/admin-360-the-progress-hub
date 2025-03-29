@@ -20,6 +20,12 @@ import {
 import logo from "../../assets/admin-360-logo.jpg";
 import theme from "../../theme/Theme";
 import { ThemeProvider } from "@mui/material/styles";
+import { departmentEmployeesDetails } from "../../data/departmentEmployeesDetails";
+
+// Extract unique department names from the data
+const departmentNames = Array.from(
+    new Set(departmentEmployeesDetails.map((dept) => dept.department))
+);
 
 const LoginContainer = styled(Container)({
     display: "flex",
@@ -44,19 +50,55 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
+    // const handleLogin = (event: React.FormEvent) => {
+    //     event.preventDefault();
+
+    //     // Admin login
+    //     if (username === "admin" && password === "admin") {
+    //         localStorage.setItem("token", "admin_token");
+    //         navigate("/mainDashboard");
+    //     }
+    //     // Department login
+    //     else if (username === password && departmentNames.includes(username)) {
+    //         localStorage.setItem("token", "user_token");
+    //         navigate(`/departmentDashboard/${username}`);
+    //     }
+    //     // Invalid login
+    //     else {
+    //         alert("Invalid username or password!");
+    //     }
+    // };
+
     const handleLogin = (event: React.FormEvent) => {
         event.preventDefault();
-
+    
+        // Admin login
         if (username === "admin" && password === "admin") {
             localStorage.setItem("token", "admin_token");
             navigate("/mainDashboard");
-        } else if (username.trim() !== "" && password.trim() !== "") {
+        }
+        // Department login
+        else if (username === password && departmentNames.includes(username)) {
             localStorage.setItem("token", "user_token");
             navigate(`/departmentDashboard/${username}`);
-        } else {
-            alert("Invalid username or password!");
+        }
+        // Member login
+        else {
+            // Find member by name and password match
+            const member = departmentEmployeesDetails.find(
+                (member) => member.name === username && member.name === password
+            );
+    
+            if (member) {
+                localStorage.setItem("token", "member_token");
+                localStorage.setItem("memberName", member.name);
+                navigate(`/memberDashboard/${member.name}`);
+            } else {
+                alert("Invalid username or password!");
+            }
         }
     };
+    
 
     const handleTogglePassword = () => {
         setShowPassword((prev) => !prev);
@@ -64,7 +106,7 @@ const Login = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <LoginContainer maxWidth="sm" sx={{overflow:"auto"}}>
+            <LoginContainer maxWidth="sm" sx={{ overflow: "auto" }}>
                 <Box mb={3}>
                     <img src={logo} alt="Logo" style={{ width: "180px", height: "auto" }} />
                 </Box>
@@ -87,7 +129,7 @@ const Login = () => {
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            <UserIcon sx={{ color: "#005500"  }} />
+                                            <UserIcon sx={{ color: "#005500" }} />
                                         </InputAdornment>
                                     ),
                                 }}
@@ -147,7 +189,6 @@ const Login = () => {
                             fullWidth
                             sx={{
                                 color: "black",
-                                // backgroundColor: theme.palette.primary.main,
                                 backgroundColor: "#ffc022",
                                 "&:hover": { color: "black", backgroundColor: "#e4bfa7" },
                             }}

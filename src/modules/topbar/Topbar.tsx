@@ -33,9 +33,10 @@ const SearchBar = styled(Box)({
 interface TopbarProps {
     position?: "fixed" | "absolute" | "sticky" | "static" | "relative";
     departmentName?: string; // ✅ Add departmentName prop
+    memberName?: string; // ✅ Add memberName prop
   }
   
-const Topbar: React.FC<TopbarProps> = ({ position = "fixed", departmentName  }) => {
+const Topbar: React.FC<TopbarProps> = ({ position = "fixed", departmentName, memberName  }) => {
   const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -142,10 +143,24 @@ const Topbar: React.FC<TopbarProps> = ({ position = "fixed", departmentName  }) 
             }}
             onClick={(event) => handleIconClick("profile", event)}
           >
-            {selectedIcon === "profile" ? <AccountCircleIcon sx={{ color: "#fde9b6" }} /> : <AccountCircleOutlinedIcon sx={{ color: "#005500" }} />}
+            {/* {selectedIcon === "profile" ? <AccountCircleIcon sx={{ color: "#fde9b6" }} /> : <AccountCircleOutlinedIcon sx={{ color: "#005500" }} />}
             <Typography variant="body1" className="profile-text" sx={{ color: selectedIcon === "profile" ? "#fde9b6" : "#005500", fontWeight: "bold" }}>
             {departmentName ? departmentName : "Admin"} 
-            </Typography>
+            </Typography> */}
+
+          {selectedIcon === "profile" ? (
+            <AccountCircleIcon sx={{ color: "#fde9b6" }} />
+          ) : (
+            <AccountCircleOutlinedIcon sx={{ color: "#005500" }} />
+          )}
+          {/* <Typography variant="body1" className="profile-text" sx={{ color: selectedIcon === "profile" ? "#fde9b6" : "#005500", fontWeight: "bold" }}>
+            {memberName ? memberName : "Admin"} 
+            {departmentName ? ` - ${departmentName}` : ""}
+          </Typography> */}
+
+          <Typography variant="body1" className="profile-text" sx={{ color: selectedIcon === "profile" ? "#fde9b6" : "#005500", fontWeight: "bold" }}>
+            {departmentName ? departmentName : memberName ? memberName : "Admin"}
+          </Typography>
 
           </Box>
 

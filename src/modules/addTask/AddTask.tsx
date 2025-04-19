@@ -83,12 +83,16 @@ const AddTask: React.FC<AddTaskProps> = ({ open, onClose, setTasks }) => {
       const newTask: Task = {
         id: Date.now(), // Unique ID
         title: taskTitle,
-        name: selectedEmployee,
+        member_name: selectedEmployee,
         department: selectedDepartment,
         status: "New", // ✅ Set as "New" first
-        dueDate: formattedDueDate, // ✅ Store only the date (No Time)
+        due_date: formattedDueDate, // ✅ Store only the date (No Time)
         attachment: attachment ? attachment.name : "No Attachment",
-        createdAt: new Date().toISOString(), // ✅ Store timestamp for tracking
+        created_at: new Date().toISOString(), // ✅ Store timestamp for tracking
+        description: "string",
+        updated_at: new Date().toISOString(),    // Added to match the database
+
+
       };
 
 

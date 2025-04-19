@@ -26,15 +26,23 @@ const DepartmentDashboard: React.FC<DepartmentDashboardProps> = ({ departmentNam
     (employee) => employee.department === departmentName
   );
 
+  const filteredTasks = initialTasks.filter(
+    (task) => task.department.toLowerCase() === departmentName.toLowerCase()
+  );
+  
+
   // 🟢 Filter tasks based on department
   useEffect(() => {
+    console.log("Current department:", departmentName);
     if (departmentName) {
       const filteredTasks = initialTasks.filter(
         (task) => task.department.toLowerCase() === departmentName.toLowerCase()
       );
+      console.log("Filtered Tasks:", filteredTasks); // 🟢 Check what's filtered
       setTasks(filteredTasks);
     }
   }, [departmentName]);
+    
 
   // 🔹 Handle Logout
   const handleLogout = () => {

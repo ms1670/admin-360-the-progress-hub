@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate  } from "react-router-dom";
 import { Box, Typography, Container } from "@mui/material";
 import MemberSidebar from "./MemberSidebar";
 import Topbar from "../topbar/Topbar";
@@ -11,8 +11,11 @@ const MemberDashboard: React.FC = () => {
     const { memberName } = useParams<{ memberName: string }>();
     const [open, setOpen] = useState(true);
 
+    if (!memberName) return <Navigate to="/login" />;
+
+
     // ✅ Filter tasks by member name
-    const filteredTasks = initialTasks.filter((task) => task.name === memberName);
+    const filteredTasks = initialTasks.filter((task) => task.member_name === memberName);
 
     return (
         <Box sx={{ display: "flex", height: "100vh" }}>

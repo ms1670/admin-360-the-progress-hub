@@ -3,9 +3,15 @@ import { useState } from "react";
 import Sidebar from "../modules/sidebar/Sidebar"; // Ensure the correct import path
 import Topbar from "../modules/topbar/Topbar"; // Ensure the correct import path
 
+import TaskList from "../modules/taskList/TaskList";
+import EventCalendar from "../modules/calendar/EventCalendar";
+import { initialTasks } from "../data/TaskData";
+import { Task as TaskType } from "../types/taskTypes";
+
 
 const Task = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [tasks, setTasks] = useState<TaskType[]>(initialTasks);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -30,10 +36,27 @@ const Task = () => {
           }}
         >
           <Container maxWidth="xl">
-          <Typography variant="h4" sx={{ my: 3 }}>
-             Task Dashboard
-          </Typography>
-        </Container>
+              <Typography variant="h4" sx={{ my: 3 }}>
+                Tasks
+              </Typography>
+
+              <Box sx={{ display: "flex", gap: 2 }}>
+                <Box sx={{ flex: 2 }}>
+                  <TaskList 
+                    tasks={tasks} 
+                    setTasks={setTasks} 
+                    openAddTask={false} // If you don't use AddTask popup here
+                    handleOpenAddTask={() => {}} 
+                    handleCloseAddTask={() => {}} 
+                  />
+                </Box>
+
+                <Box sx={{ flex: 1 }}>
+                  <EventCalendar />
+                </Box>
+              </Box>
+            </Container>
+
         </Box>
 
       </Box>

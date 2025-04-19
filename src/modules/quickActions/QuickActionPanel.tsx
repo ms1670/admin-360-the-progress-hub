@@ -16,6 +16,9 @@ import { departmentEmployeesDetails } from "../../data/departmentEmployeesDetail
 import AddTask from "../addTask/AddTask";
 import { initialTasks } from "../../data/TaskData";
 import { Task } from "../../types/taskTypes"; // ✅ Ensure this path is correct
+import AddMember from "../addMember/AddMember";
+import AddDepartment from "../addDepartment/AddDepartment";
+
 
 const QuickActionPanel = ({ setTasks, handleOpenAddTask }: { 
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>,
@@ -27,8 +30,10 @@ const QuickActionPanel = ({ setTasks, handleOpenAddTask }: {
   const [isAddTaskOpen, setIsAddTaskOpen] = useState(false);
   const [tasks, ] = useState<Task[]>(initialTasks); // ✅ Add Task type
 
-  // ✅ Fetch department names correctly
+  // Fetch department names correctly
   const departmentNames = departmentEmployeesDetails.map((dept) => dept.department);
+  
+  const [isAddDepartmentOpen, setIsAddDepartmentOpen] = useState(false);
 
   const handleActionClick = (
     action: string,
@@ -45,6 +50,9 @@ const QuickActionPanel = ({ setTasks, handleOpenAddTask }: {
       prev.includes(department) ? prev.filter((d) => d !== department) : [...prev, department]
     );
   };
+
+  const [isAddMemberOpen, setIsAddMemberOpen] = useState(false);
+
 
   return (
     <Box
@@ -182,11 +190,33 @@ const QuickActionPanel = ({ setTasks, handleOpenAddTask }: {
       {/* Add Task Popup */}
       <AddTask open={isAddTaskOpen} onClose={() => setIsAddTaskOpen(false)} setTasks={setTasks} />
 
+      {/* Add Member Popup */}
+      <AddMember
+          open={isAddMemberOpen}
+          onClose={() => setIsAddMemberOpen(false)}
+          onSubmit={(memberData) => {
+            console.log("New member submitted:", memberData);
+            setIsAddMemberOpen(false); // Optionally close after submit
+          }}
+        />
+
+        <AddDepartment
+          open={isAddDepartmentOpen}
+          onClose={() => setIsAddDepartmentOpen(false)}
+          onSubmit={(data) => {
+            console.log("New department added", data);
+            // Save logic can be added here
+          }}
+        />
+
+
+
       {/* Add Members Button */}
       <Button
         variant="outlined"
         startIcon={<GroupAddIcon sx={{ fontSize: "20px" }} />}
-        onClick={() => handleActionClick("members")}
+        // onClick={() => handleActionClick("members")}
+        onClick={() => setIsAddMemberOpen(true)}
         sx={{
           borderRadius: "8px",
           fontSize: "12px",
@@ -206,7 +236,8 @@ const QuickActionPanel = ({ setTasks, handleOpenAddTask }: {
       <Button
         variant="outlined"
         startIcon={<ApartmentIcon sx={{ fontSize: "20px" }} />}
-        onClick={() => handleActionClick("department")}
+        // onClick={() => handleActionClick("department")}
+        onClick={() => setIsAddDepartmentOpen(true)}
         sx={{
           borderRadius: "8px",
           fontSize: "12px",
@@ -222,6 +253,7 @@ const QuickActionPanel = ({ setTasks, handleOpenAddTask }: {
         Add Department
       </Button>
     </Box>
+    
   );
 };
 

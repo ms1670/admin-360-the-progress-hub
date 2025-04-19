@@ -11,7 +11,14 @@ import EventCalendar from "../calendar/EventCalendar";
 import AllDepartmentsTaskList from "../allDepartments/AllDepartmentsTaskList";
 import AddTask from "../addTask/AddTask"; // ✅ Import AddTask Component
 import { initialTasks } from "../../data/TaskData";
-import { Task } from "../../types/taskTypes";  // ✅ Import Task type
+import { Task } from "../../types/taskTypes";  // ✅ Import Task 
+import Chatbox from "../chatbox/Chatbox";
+import Chart from "../chart/Chart"; // ✅ Import Chart
+import ChartStatusPie from "../chart/ChartStatusPie";
+import ChartTaskTrend from "../chart/ChartTaskTrend";
+import ChartTaskDepartment from '../chart/ChartTaskDepartment';
+import TaskCalendarHeatmap from '../chart/TaskCalendarHeatmap';
+
 
 const MainDashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -47,10 +54,26 @@ const MainDashboard = () => {
             <QuickActionPanel setTasks={setTasks} handleOpenAddTask={handleOpenAddTask} />
             <ToastContainer />
 
-            <ProgressCards tasks={tasks} />
+            <Box sx={{ display: "flex", gap: 2, marginTop: 3 }}>
+              <Box sx={{ flex: 2 }}>
+                {/* chart */}
+                <Chart />
+                {/* <ChartStatusPie tasks={tasks} /> */}
+                {/* <ChartTaskTrend tasks={tasks} /> */}
+                {/* <ChartTaskDepartment tasks={tasks} /> */}
+                {/* <TaskCalendarHeatmap tasks={tasks} /> */}
+
+              </Box>
+
+              <Box sx={{ flex: 1 }}>
+                  <ProgressCards tasks={tasks} />
+              </Box>
+            </Box>
+
+            {/* <ProgressCards tasks={tasks} /> */}
             <AddTask open={addTaskOpen} onClose={handleCloseAddTask} setTasks={setTasks} />
 
-            {/* ✅ TaskList receives tasks */}
+            {/* ✅ TaskList receives tasks
             <TaskList 
                 tasks={tasks} 
                 setTasks={setTasks}  
@@ -60,8 +83,27 @@ const MainDashboard = () => {
 
               /> 
 
-            <EventCalendar />
+            <EventCalendar /> */}
+            
+            <Box sx={{ display: "flex", gap: 2, marginTop: 3 }}>
+              <Box sx={{ flex: 2 }}>
+                <TaskList 
+                  tasks={tasks} 
+                  setTasks={setTasks}  
+                  openAddTask={addTaskOpen}
+                  handleOpenAddTask={handleOpenAddTask} 
+                  handleCloseAddTask={handleCloseAddTask}
+                /> 
+              </Box>
+
+              <Box sx={{ flex: 1 }}>
+                <EventCalendar />
+              </Box>
+            </Box>
+
+
             <AllDepartmentsTaskList  tasks={tasks}/>
+            <Chatbox />
           </Container>
         </Box>
       </Box>

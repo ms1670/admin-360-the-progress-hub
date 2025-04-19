@@ -1,5 +1,234 @@
 Project Structure for admin-360-the-progress-hub-mui
 
+admin-360-the-progress-hub-mui/
+│
+├── build/                       # Production build output
+├── node_modules/               # Installed dependencies
+├── public/                     # Static public assets
+├── src/                        # Main source directory
+│   ├── api/                        # API utility functions
+│   │   ├── api.ts
+│   │   └── taskApi.ts
+│   │
+│   ├── assets/                     # Static assets (e.g., images)
+│   │   └── admin-360-logo.jpg
+│   │
+│   ├── controllers/               # Backend logic (used in dev/server-side)
+│   │   └── taskController.js
+│   │
+│   ├── data/                       # Static data & sample datasets
+│   │   ├── departmentCategoryData.ts
+│   │   ├── departmentEmployeesDetails.tsx
+│   │   ├── departments.tsx
+│   │   └── TaskData.ts
+│   │
+│   ├── jwt-auth/                   # JWT Auth server logic
+│   │   ├── config/
+│   │   │   └── db.js
+│   │   ├── middlewares/
+│   │   │   └── authMiddleware.js
+│   │   ├── routes/
+│   │   │   └── authRoutes.js
+│   │   ├── .env                    # Environment variables
+│   │   └── testDB.js               # DB connection test script
+│   │
+│   ├── modules/                    # App features/modules (UI components + logic)
+│   │   ├── addTask/
+│   │   │   └── AddTask.tsx
+│   │   ├── allDepartments/
+│   │   │   └── AllDepartmentsTaskList.tsx
+│   │   ├── calendar/
+│   │   │   ├── Calendar.tsx
+│   │   │   └── EventCalendar.tsx
+│   │   ├── chart/
+│   │   │   ├── Chart.tsx
+│   │   │   ├── ChartStatusPie.tsx
+│   │   │   ├── ChartTaskDepartment.tsx
+│   │   │   ├── ChartTaskTrend.tsx
+│   │   │   └── TaskCalendarHeatmap.tsx
+│   │   ├── chatbox/
+│   │   │   └── Chatbox.tsx
+│   │   ├── departmentDashboard/
+│   │   │   ├── DepartmentDashboard.tsx
+│   │   │   ├── DepartmentMembers.tsx
+│   │   │   ├── DepartmentReports.tsx
+│   │   │   ├── DepartmentSettings.tsx
+│   │   │   └── DepartmentSidebar.tsx
+│   │   ├── login/
+│   │   │   └── Login.tsx
+│   │   ├── mainDashboard/
+│   │   │   └── MainDashboard.tsx
+│   │   ├── memberDashboard/
+│   │   │   ├── MemberDashboard.tsx
+│   │   │   ├── MemberProfile.tsx
+│   │   │   ├── MemberReports.tsx
+│   │   │   ├── MemberSettings.tsx
+│   │   │   ├── MemberSidebar.tsx
+│   │   │   └── MemberTasks.tsx
+│   │   ├── progressCards/
+│   │   │   └── ProgressCards.tsx
+│   │   ├── quickActions/
+│   │   │   └── QuickActionPanel.tsx
+│   │   ├── sidebar/
+│   │   │   └── Sidebar.tsx
+│   │   ├── taskList/
+│   │   │   └── TaskList.tsx
+│   │   └── topbar/
+│   │       └── Topbar.tsx
+│   │
+│   ├── pages/                      # Top-level route pages
+│   │   ├── CategoryDepartments.tsx
+│   │   ├── Department.tsx
+│   │   ├── ErrorPage.tsx
+│   │   ├── Members.tsx
+│   │   ├── Report.tsx
+│   │   ├── Settings.tsx
+│   │   ├── SubDepartments.tsx
+│   │   └── Task.tsx
+│   │
+│   ├── routes/                     # Route config files
+│   │   └── taskRoutes.js
+│   │
+│   ├── services/                   # API service functions
+│   │   └── AuthService.js
+│   │
+│   ├── theme/                      # MUI theme setup
+│   │   └── Theme.ts
+│   │
+│   ├── types/                      # Custom TypeScript declarations
+│   │   ├── react-calendar-heatmap.d.ts
+│   │   └── taskTypes.ts
+│   │
+│   └── utils/                      # Utility/helper functions
+│   │   └── slugify.ts
+│   │
+│   │
+│   ├── App.tsx               # Root app component
+│   ├── App.css
+│   ├── App.test.tsx
+│   ├── index.tsx             # Entry point
+│   ├── index.css
+│   ├── logo.svg
+│   ├── pro-struct.txt        # Possibly structure notes
+│   ├── react-app-env.d.ts
+│   └── reportWebVitals.ts
+├── package.json                # Project metadata and dependencies
+├── package-lock.json           # Exact dependency versions
+
+
+
+
+
+
+admin-360-the-progress-hub-mui/
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+├── server.js
+├── tsconfig.json
+└── src
+    ├── App.css
+    ├── App.test.tsx
+    ├── App.tsx
+    ├── index.css
+    ├── index.tsx
+    ├── logo.svg
+    ├── pro-struct.txt
+    ├── react-app-env.d.ts
+    ├── reportWebVitals.ts
+    ├── setupTests.ts
+    ├── api
+    │   ├── api.ts
+    │   └── taskApi.ts
+    ├── assets
+    │   └── admin-360-logo.jpg
+    ├── controllers
+    │   └── taskController.js
+    ├── data
+    │   ├── departmentEmployeesDetails.tsx
+    │   ├── departments.tsx
+    │   ├── departmentCategoryData.tsx
+    │   └── TaskData.ts
+    ├── jwt-auth
+    │   ├── .env
+    │   ├── testDB.js
+    │   ├── config
+    │   │   └── db.js
+    │   ├── middlewares
+    │   │   └── authMiddleware.js
+    │   └── routes
+    │       └── authRoutes.js
+    ├── modules
+    │   ├── addTask
+    │   │   └── AddTask.tsx
+    │   ├── allDepartments
+    │   │   └── AllDepartmentsTaskList.tsx
+    │   ├── calendar
+    │   │   ├── Calendar.tsx
+    │   │   └── EventCalendar.tsx
+    │   ├── departmentDashboard
+    │   │   ├── DepartmentDashboard.tsx
+    │   │   ├── DepartmentMembers.tsx
+    │   │   ├── DepartmentReports.tsx
+    │   │   ├── DepartmentSettings.tsx
+    │   │   └── DepartmentSidebar.tsx
+    │   ├── login
+    │   │   └── Login.tsx
+    │   ├── mainDashboard
+    │   │   └── MainDashboard.tsx
+    │   ├── memberDashboard
+    │   │   ├── MemberDashboard.tsx
+    │   │   ├── MemberProfile.tsx
+    │   │   ├── MemberReports.tsx
+    │   │   ├── MemberSettings.tsx
+    │   │   ├── MemberSidebar.tsx
+    │   │   └── MemberTasks.tsx
+    │   ├── progressCards
+    │   │   └── ProgressCards.tsx
+    │   ├── quickActions
+    │   │   └── QuickActionPanel.tsx
+    │   ├── sidebar
+    │   │   └── Sidebar.tsx
+    │   ├── taskList
+    │   │   └── TaskList.tsx
+    │   └── topbar
+    │       └── Topbar.tsx
+    ├── pages
+    │   ├── Department.tsx
+    │   ├── ErrorPage.tsx
+    │   ├── Members.tsx
+    │   ├── Report.tsx
+    │   ├── Settings.tsx
+    │   ├── SubDepartments.tsx
+    │   └── Task.tsx
+    ├── routes
+    │   └── taskRoutes.js
+    ├── services
+    │   └── AuthService.js
+    ├── theme
+    │   └── Theme.ts
+    └── types
+        └── taskTypes.ts
+
+
+C:\Users\DELL\React Projects\admin-360-the-progress-hub-mui\src\data
+C:\Users\DELL\React Projects\admin-360-the-progress-hub-mui\src\data\departmentCategoryData.ts
+C:\Users\DELL\React Projects\admin-360-the-progress-hub-mui\src\data\departmentEmployeesDetails.tsx
+C:\Users\DELL\React Projects\admin-360-the-progress-hub-mui\src\data\departments.tsx
+C:\Users\DELL\React Projects\admin-360-the-progress-hub-mui\src\data\TaskData.ts
+
+
+
+
+
+
+
+
+
+
+
+
 
 admin-360-the-progress-hub-mui/
 │── package.json

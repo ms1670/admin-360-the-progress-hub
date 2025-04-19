@@ -34,9 +34,12 @@ const MemberSidebar: React.FC<MemberSidebarProps> = ({ open, setOpen }) => {
     navigate(path);
   };
 
+  const memberName = localStorage.getItem("memberName");
+
   // Member-specific menu items
   const menuItems = [
-    { text: "Dashboard", icon: <DashboardIcon />, path: "/memberDashboard" },
+    // { text: "Dashboard", icon: <DashboardIcon />, path: "/memberDashboard" },
+    { text: "Dashboard", icon: <DashboardIcon />, path: `/member-dashboard/${memberName}` },
     { text: "My Tasks", icon: <TaskIcon />, path: "/member-dashboard/my-tasks" },
     { text: "Profile", icon: <PersonIcon />, path: "/member-dashboard/profile" },
   ];

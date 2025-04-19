@@ -18,6 +18,8 @@ import {
     Lock as LockIcon,
 } from "@mui/icons-material";
 import logo from "../../assets/admin-360-logo.jpg";
+import Mainlogo from "../../assets/admin-360-logo.png";
+import mainlogonobg from "../../assets/admin-360-logo-nobg.png";
 import theme from "../../theme/Theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { departmentEmployeesDetails } from "../../data/departmentEmployeesDetails";
@@ -41,6 +43,7 @@ const LoginBox = styled(Paper)({
     maxWidth: "400px",
     textAlign: "center",
     backgroundColor: theme.palette.tertiary.main,
+    marginBottom:"32px",
 });
 
 const Login = () => {
@@ -88,7 +91,6 @@ const Login = () => {
             const member = departmentEmployeesDetails.find(
                 (member) => member.name === username && member.name === password
             );
-    
             if (member) {
                 localStorage.setItem("token", "member_token");
                 localStorage.setItem("memberName", member.name);
@@ -106,12 +108,12 @@ const Login = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <LoginContainer maxWidth="sm" sx={{ overflow: "auto" }}>
-                <Box mb={3}>
-                    <img src={logo} alt="Logo" style={{ width: "180px", height: "auto" }} />
+            <LoginContainer maxWidth="sm" sx={{ overflow: "auto", background:"#fde9b6", height:"auto", }}>
+                <Box mb={2} mt={2}>
+                    <img src={mainlogonobg} alt="Logo" style={{ width: "300px", height: "auto", }} />
                 </Box>
 
-                <LoginBox elevation={2}>
+                <LoginBox elevation={2} sx={{background:"#fff",}}>
                     <Typography variant="h5" gutterBottom>
                         Login
                     </Typography>
@@ -190,7 +192,7 @@ const Login = () => {
                             sx={{
                                 color: "black",
                                 backgroundColor: "#ffc022",
-                                "&:hover": { color: "black", backgroundColor: "#e4bfa7" },
+                                "&:hover": { color: "black", backgroundColor: "#d1e7dd" },
                             }}
                         >
                             Login

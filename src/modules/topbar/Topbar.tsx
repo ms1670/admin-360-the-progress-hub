@@ -18,6 +18,9 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import logo from "../../assets/admin-360-logo.jpg";
+import topbarlogo from "../../assets/topbar-logo.png";
+import appName from "../../assets/app-name-img.png";
+import applogoh from '../../assets/topbar-logo-h.png'
 import { useNavigate } from "react-router-dom";
 
 
@@ -65,8 +68,9 @@ const Topbar: React.FC<TopbarProps> = ({ position = "fixed", departmentName, mem
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", height: "100%" }}>
         {/* ✅ Left Section (Logo & Name) */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <img src={logo} alt="Admin 360" style={{ height: "40px", marginRight: "10px" }} />
-          <Typography variant="h6" sx={{ color: "#005500", fontWeight: "bold" }}>Admin 360</Typography>
+          <img src={applogoh} alt="Admin 360" style={{ height: "80px", marginRight: "10px", marginLeft:"16px", }} />
+          {/* <Typography variant="h6" sx={{ color: "#005500", fontWeight: "bold" }}>Admin 360</Typography> */}
+          {/* <img src={appName} alt="Admin 360" style={{ height: "50px", marginRight: "10px" }} /> */}
         </Box>
 
         {/* ✅ Center Section (Search Bar) */}

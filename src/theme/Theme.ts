@@ -23,7 +23,9 @@ const theme = createTheme({
       main: "#fde9b6", // Tertiary color
     },
     hovers: {
-      main: "#e4bfa7", // New hover color
+//main: "#e4bfa7", // New hover color
+      main: "#d1e7dd", // New hover color
+      
     },
   },
   typography: {

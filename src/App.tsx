@@ -1,11 +1,14 @@
 import React, { ReactNode } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from "react-router-dom";
 import Login from "./modules/login/Login";  
+
 import MainDashboard from "./modules/mainDashboard/MainDashboard";
 import Department from "./pages/Department";
 import Task from "./pages/Task";
 import Report from "./pages/Report";
 import Settings from "./pages/Settings";
+import CategoryDepartments from "./pages/CategoryDepartments";
+
 import SubDepartments from "./pages/SubDepartments";
 import DepartmentDashboard from "./modules/departmentDashboard/DepartmentDashboard";
 import DepartmentMembers from "./modules/departmentDashboard/DepartmentMembers";
@@ -38,7 +41,8 @@ const DepartmentDashboardWrapper: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
+
+    <Router basename="/">
       <div style={{ display: "flex" }}>
         <div style={{ flexGrow: 1, padding: "16px" }}>
           <Routes>
@@ -50,6 +54,7 @@ const App: React.FC = () => {
             <Route path="/mainDashboard" element={<ProtectedRoute><MainDashboard /></ProtectedRoute>} />
             <Route path="/departments" element={<ProtectedRoute><Department /></ProtectedRoute>} />
             <Route path="/members" element={<Members />} />
+            <Route path="/category/:categoryName" element={<CategoryDepartments />} />
 
             <Route path="/tasks" element={<ProtectedRoute><Task /></ProtectedRoute>} />
             <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
@@ -76,14 +81,14 @@ const App: React.FC = () => {
               element={<ProtectedRoute><DepartmentSettings /></ProtectedRoute>}
             />
 
-
              {/* Member Dashboard Route */}
             <Route path="/memberDashboard/:memberName" element={<ProtectedRoute><MemberDashboard /></ProtectedRoute>} />
-
+            
             <Route
               path="/memberDashboard/:departmentName"
               element={<ProtectedRoute><DepartmentDashboardWrapper /></ProtectedRoute>}
             />
+            
             <Route path="/member-dashboard/my-tasks" element={<ProtectedRoute><MemberTasks /></ProtectedRoute>} />
         <Route path="/member-dashboard/profile" element={<ProtectedRoute><MemberProfile /></ProtectedRoute>} />
         <Route path="/member-dashboard/settings" element={<ProtectedRoute><MemberSettings /></ProtectedRoute>} />
